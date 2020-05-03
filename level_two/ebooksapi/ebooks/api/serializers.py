@@ -4,6 +4,8 @@ from ..models import Ebook, Review
 
 class ReviewSerializer(serializers.ModelSerializer):
 
+    review_author = serializers.StringRelatedField(many=True)
+
     class Meta:
         model = Review
         exclude = ("ebook",)
