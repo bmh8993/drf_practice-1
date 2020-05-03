@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-auth', include("rest_framework.urls")),  # drf에서 일반 유저 login 가능
     path("api/", include("ebooks.api.urls"))
 ]

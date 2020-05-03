@@ -121,3 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#REST_FRAMEWORK = {
+#    'DEFAULT_PERMISSION_CLASSES': [
+#        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+#    ]
+#}
+# 이렇게 글로벌로 사용은 잘 안한다. view마다 권한이나 인증이 다르기 때문이다.
