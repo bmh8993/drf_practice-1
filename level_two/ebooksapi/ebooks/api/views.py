@@ -7,15 +7,17 @@ from rest_framework.exceptions import ValidationError
 from ..models import Ebook, Review
 from ..api.serializers import EbookSerializer, ReviewSerializer
 from ..api.permissions import IsAdminUserOrReadOnly, IsReviewAuthorOrReadOnly
+from ..api.pagination import SmallSetPagination
 
 
 class EbookListCreateAPIView(generics.ListCreateAPIView):
     # ListCreateAPIView는 아래의 코드를 모두 상속하고 있다.
-    queryset = Ebook.objects.all()
+    queryset = Ebook.objects.all().order_by("-id")
     serializer_class = EbookSerializer
     #permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     # 개별로 설정하면 view마다 다른 권한을 설정할 수 있다.
     permission_classes = [IsAdminUserOrReadOnly]
+    pagination_class = SmallSetPagination
 
 
 class EbookDetatilAPIView(generics.RetrieveUpdateDestroyAPIView):
