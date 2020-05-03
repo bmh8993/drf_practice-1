@@ -128,3 +128,9 @@ STATIC_URL = '/static/'
 #    ]
 #}
 # 이렇게 글로벌로 사용은 잘 안한다. view마다 권한이나 인증이 다르기 때문이다.
+
+#REST_FRAMEWORK = {
+#    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+#    'PAGE_SIZE': 3
+#}
+# 페이지네이션 글로벌 세팅으로 한 페이지당 아이템이 3개가 전달된다
