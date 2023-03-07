@@ -8,7 +8,7 @@ chardet==3.0.4
 decorator==4.4.2
 Django==3.0.7
 django-extensions==2.2.9
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 entrypoints==0.3
 google-api-core==1.16.0
 google-api-python-client==1.8.0
